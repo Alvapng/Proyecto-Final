@@ -59,7 +59,5 @@ public class Persona {
         return dinero;
     }
     
-    public void Comunicar(){
-        System.out.println("La persona se esta comunicando");
-    }
+    
 }
