@@ -183,7 +183,7 @@ public class Paciente extends Persona{
             Receta receta = recetas.get(posicionReal);
             return receta;
         } catch(IndexOutOfBoundsException e){
-            System.out.println("No existe una tarea con ese indice");
+            System.out.println("No existe una receta con ese indice");
         }
         return null;
     }
