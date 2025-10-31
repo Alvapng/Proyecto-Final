@@ -217,8 +217,8 @@ public class Main {
                     do{
                         System.out.println("--------------------------------");
                         System.out.println("1-Cargar Paciente");
-                        System.out.println("2-Buscar Paciente");
-                        System.out.println("3-Buscar paciente(obtener consulta/comprar medicamento");
+                        System.out.println("2-Listar Paciente");
+                        System.out.println("3-Buscar paciente(obtener consulta/comprar medicamento/cargar dinero");
                         System.out.println("4-Salir al menú principal");
                         System.out.println("--------------------------------");
                         opc = scanner.nextLine();
@@ -260,7 +260,8 @@ public class Main {
                                 System.out.println("¿Qué desea hacer?");
                                 System.out.println("1-Consulta Médica");
                                 System.out.println("2-Comprar medicamento");
-                                System.out.println("3-Nada");
+                                System.out.println("3-Cargar dinero");
+                                System.out.println("4-Nada");
                                 opc = scanner.nextLine();
                                 opcion = farmacia.verificacionNumero(opc);
                                         
@@ -327,13 +328,21 @@ public class Main {
                                             System.out.println(e.getMessage());
                                         }
                                         break;
+                                        
                                     case 3:
+                                        System.out.println("Ingrese la cantidad de dinero que desea cargar");
+                                
+                                        String dinero = scanner.nextLine();
+                                         int cargarDinero = farmacia.verificacionNumero(dinero);
+                                         gestor.actualizarDinero(cargarDinero, p.getId());
+                                         break;
+                                    case 4:
                                         System.out.println("Saliendo al menú de gestores de pacientes...");
                                         break;
                                     default:
                                         System.out.println("Dato invalido");
                                 }
-                                }while(opcion != 3);
+                                }while(opcion != 4);
                                 } catch(Exception e){
                                     System.out.println(e.getMessage());
                                 }

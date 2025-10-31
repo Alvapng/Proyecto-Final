@@ -289,6 +289,30 @@ public class GestorMedicoPaciente {
        System.err.println("SQLException: " + ex.getMessage());
      }
     }
+      
+      public void actualizarDinero(int dinero, int id){
+          Connection conn = null;
+        PreparedStatement psUpdate = null;
+        String sqlUpdate = "UPDATE paciente SET dinero = dinero + ? WHERE id = ? ";
+        try{
+            conn = DriverManager.getConnection("jdbc:sqlite:proyectoFinal.sqlite");
+            if(conn != null){
+                System.out.println("Conexión exitosa con la base de datos");
+            }else{
+                System.out.println("Problemas con la conexión a la base de datos!");
+            }
+            
+            psUpdate = conn.prepareStatement(sqlUpdate);
+            psUpdate.setInt(1, dinero);
+            psUpdate.setInt(2, id);
+            psUpdate.execute();
+            
+            psUpdate.close();
+            conn.close();
+        }catch(SQLException ex){
+             System.err.println("SQLException: " + ex.getMessage());
+        }
+      }
 }
 
 
