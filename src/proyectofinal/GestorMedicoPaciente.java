@@ -293,7 +293,7 @@ public class GestorMedicoPaciente {
       public void actualizarDinero(int dinero, int id){
           Connection conn = null;
         PreparedStatement psUpdate = null;
-        String sqlUpdate = "UPDATE paciente SET dinero = dinero + ? WHERE id = ? ";
+        String sqlUpdate = "UPDATE paciente SET dinero =  ? WHERE id = ? ";
         try{
             conn = DriverManager.getConnection("jdbc:sqlite:proyectoFinal.sqlite");
             if(conn != null){

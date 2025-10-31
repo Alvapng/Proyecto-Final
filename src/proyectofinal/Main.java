@@ -23,6 +23,7 @@ public class Main {
          int opcion;
          String opc;
          int opcion2;
+         int opcion3;
          boolean verificacion;
         Scanner scanner = new Scanner(System.in);
         Farmacia farmacia = new Farmacia("Farmacia cruz verde", "Luján de cuyo 1920");
@@ -263,9 +264,9 @@ public class Main {
                                 System.out.println("3-Cargar dinero");
                                 System.out.println("4-Nada");
                                 opc = scanner.nextLine();
-                                opcion = farmacia.verificacionNumero(opc);
+                                opcion3 = farmacia.verificacionNumero(opc);
                                         
-                                switch(opcion){
+                                switch(opcion3){
                                     case 1:
                                          try{
                                          System.out.println("Estos son los médicos disponibles para su consulta");
@@ -334,7 +335,8 @@ public class Main {
                                 
                                         String dinero = scanner.nextLine();
                                          int cargarDinero = farmacia.verificacionNumero(dinero);
-                                         gestor.actualizarDinero(cargarDinero, p.getId());
+                                         int dineroTotal = cargarDinero + p.getDinero();
+                                         gestor.actualizarDinero(dineroTotal,idBuscar);
                                          break;
                                     case 4:
                                         System.out.println("Saliendo al menú de gestores de pacientes...");
@@ -342,7 +344,7 @@ public class Main {
                                     default:
                                         System.out.println("Dato invalido");
                                 }
-                                }while(opcion != 4);
+                                }while(opcion3 != 4);
                                 } catch(Exception e){
                                     System.out.println(e.getMessage());
                                 }

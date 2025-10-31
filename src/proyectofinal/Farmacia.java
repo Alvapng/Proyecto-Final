@@ -225,6 +225,7 @@ public class Farmacia {
             System.out.println("Exception " + e.getMessage());
         }
 }
+    
     public void eliminarMedicamento(String nombre){
         Connection conn = null;
         PreparedStatement ps = null;
